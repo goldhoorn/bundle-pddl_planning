@@ -16,6 +16,9 @@
 Roby.app.using 'syskit'
 
 require 'roby/schedulers/temporal'
+
+require 'config/pddl_planning'
+
 Roby.scheduler = Roby::Schedulers::Temporal.new
 
 ## Uncomment to enable automatic transformer configuration support
