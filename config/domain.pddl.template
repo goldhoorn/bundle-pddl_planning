@@ -1,0 +1,18 @@
+(define (domain network)
+  (:requirements :strips :equality :typing :conditional-effects)
+  (:types <%= types.each.to_a.join(" ") %>)
+  (:predicates
+<% predicates.each do |p| %>
+        (<%= p %>)
+<% end %>
+  )
+
+<% actions.each do |a| %>
+(:action <%= a.name %> :parameters (<%= a.parameters.each.to_a.join(" ") %>)
+ :precondition <%= a.precondition %>
+ :effect <%= a.effect %>
+)
+<% end %>
+
+
+)

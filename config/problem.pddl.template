@@ -1,0 +1,19 @@
+(define (problem network001)
+  (:domain network)
+  (:objects
+<% objects.each do |o| %>
+        <%= o %>
+<% end %>
+  )
+  (:init
+<% init.each do |o| %>
+        (<%= o %>)
+<% end %>
+  )
+  (:goal (and
+<% goals.each do |o| %>
+        (<%= o %>)
+<% end %>
+    )
+  )
+)
