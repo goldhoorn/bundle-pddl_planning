@@ -21,6 +21,20 @@ require 'config/pddl_planning'
 
 Roby.scheduler = Roby::Schedulers::Temporal.new
 
+bat = PDDL::World.add_system('battery_pack')
+bat.add_ability 'power'
+bat.set_location 'start'
+rover = PDDL::World.add_system('rover')
+rover.add_ability 'driving'
+rover.set_location 'start'
+PDDL::World.add_location 'start'
+PDDL::World.add_location 'goal'
+PDDL::World.add_location 'step1'
+PDDL::World.add_location 'step2'
+
+
+
+
 ## Uncomment to enable automatic transformer configuration support
 # Syskit.conf.transformer_enabled = true
 
